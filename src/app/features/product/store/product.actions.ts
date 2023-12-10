@@ -6,9 +6,7 @@ import {
 } from '@ngrx/store';
 import { Product } from './product.reducer';
 
-export const getProductsRequest = createAction('[Product Compnent] Product');
-
-const productActions = createActionGroup({
+export const productActions = createActionGroup({
   source: 'Product',
   events: {
     'Get Products Request': emptyProps(),

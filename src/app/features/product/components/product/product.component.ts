@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { getProductsRequest } from '../../store/product.actions';
+
 import { selectProducts } from '../../store/product.reducer';
 import { ProductState } from '../../store/product.reducer';
 import { CommonModule } from '@angular/common';
 import { ProductService } from '../../services/product/product.service';
+import { productActions } from '../../store/product.actions';
 
 @Component({
   selector: 'app-product',
@@ -22,7 +23,7 @@ export class ProductComponent {
   ) {}
 
   ngOnInit(): void {
-    this.store.dispatch(getProductsRequest());
+    this.store.dispatch(productActions.getProductsRequest());
 
     this.productService
       .getProducts()
